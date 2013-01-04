@@ -7,7 +7,7 @@ continue your progress between game sessions. This removed the need for a batter
 to share passwords (and thus progress) with others.
 
 In Mega Man 2, the password is represented as a 5x5 grid in which the columns are labled 1-5 and the rows A-E. Each password
-is comprised of 9 cells which are 'set', indicated by a red dot.
+is composed of 9 cells which are 'set', indicated by a red dot.
 
 Thus, a password can be communicated as A5, B2, B4, C1, C3, C5, D4, D5, E2.
 
