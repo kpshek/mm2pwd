@@ -19,7 +19,7 @@ the password algorithm can be expressed succinctly in terms of these bits and us
 
 In the 25 bits, there are 5 words of 5 bits each where each word represents a row in the grid. The entire 25-bit password
 is thus comprised of the words A E D C B (using little endian). So, the first word (lowest 5 bits) are the 5 bits of the row B
-and the last word (bits 20-25) are the 6 bits of row A.
+and the last word (bits 20-25) are the 5 bits of row A.
 
 ### Words 1-4 (bits 1-20) ###
 
