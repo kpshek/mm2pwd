@@ -2,8 +2,9 @@
 
 ## Overview ##
 
-Mega Man 2, like many games of its era, utilized a password system in order to continue your progress between game sessions.
-This removed the need for a battery in the game catridge and allowed gamers to share passwords (and thus progress) with others.
+[Mega Man 2](http://en.wikipedia.org/wiki/Mega_Man_2), like many games of its era, utilized a password system in order to
+continue your progress between game sessions. This removed the need for a battery in the game catridge and allowed gamers
+to share passwords (and thus progress) with others.
 
 In Mega Man 2, the password is represented as a 5x5 grid in which the columns are labled 1-5 and the rows A-E. Each password
 is comprised of 9 cells which are 'set', indicated by a red dot.
@@ -13,7 +14,8 @@ Thus, a password can be communicated as A5, B2, B4, C1, C3, C5, D4, D5, E2.
 ![ScreenShot](https://raw.github.com/kpshek/mm2pwd/master/mega-man-2-password.png)
 
 Put another way, this 5x5 grid represents 25 bits in which a password always has exactly 9 bits set. Using this representation,
-the password algorithm can be expressed succinctly in terms of these bits and using basic bitwise operations.
+the password algorithm can be expressed succinctly in terms of these bits and using basic
+[bitwise operations](http://en.wikipedia.org/wiki/Bitwise_operation).
 
 In the 25 bits, there are 5 words of 5 bits each where each word represents a row in the grid. The entire 25-bit password
 is thus comprised of the words A E D C B (using little endian). So, the first word (lowest 5 bits) are the 5 bits of the row B
@@ -21,8 +23,9 @@ and the last word (bits 20-25) are the 6 bits of row A.
 
 ### Words 1-4 (bits 1-20) ###
 
-A Mega Man 2 password has exactly 9 bits set. 8 of these bits represent the alive/defeated status of each of the 8 bosses in
-the game. The follow table illustrates the bit values for the alive/defeated status for each of the 8 bosses.
+A Mega Man 2 password has exactly 9 bits set. 8 of these bits represent the alive/defeated status of each of the
+[8 bosses](http://en.wikipedia.org/wiki/Robot_Master#009-016_.28Mega_Man_2.29) in the game. The follow table illustrates the bit
+values for the alive/defeated status for each of the 8 bosses.
 
 Boss       | Alive | Defeated
 ---------- | ----- | --------
@@ -49,10 +52,11 @@ The last bit (9th) represents the number of E-Tanks Mega Man has. This is stored
 position in this last word. Thus, if Mega Man has 0 E-Tanks the word is 00001, 1 E-Tank is 00010, 2 E-Tanks is 00100, and so
 forth. Unlike the other words, the 5th word (row A) will thus only ever have a single bit set.
 
-The E-Tank word (row A) is important in that it encodes bits 1-20 by performing a rotate left operations on bits 1-20 by the
-number of E-Tanks that Mega Man has. Thus, if Mega Man has 2 E-Tanks, bits 1-20 are rotated left by 2 positions. If Mega Man
-has 0 E-Tanks, this is effectively a no-op. The table above illustrating the bits set for each of the 8 bosses represent the
-bits prior to the rotate left operation. The bits of the E-Tank word are not included in the left rotation.
+The E-Tank word (row A) is important in that it encodes bits 1-20 by performing a
+[rotate left operation](http://en.wikipedia.org/wiki/Circular_shift) on bits 1-20 by the number of E-Tanks that Mega Man has.
+Thus, if Mega Man has 2 E-Tanks, bits 1-20 are rotated left by 2 positions. If Mega Man has 0 E-Tanks, this is effectively a no-op.
+The table above illustrating the bits set for each of the 8 bosses represent the bits prior to the rotate left operation. The bits
+of the E-Tank word are not included in the left rotation.
 
 ## Algorithm ##
 
