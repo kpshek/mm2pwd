@@ -10,6 +10,8 @@ is comprised of 9 cells which are 'set', indicated by a red dot.
 
 Thus, a password can be communicated as A5, B2, B4, C1, C3, C5, D4, D5, E2.
 
+![ScreenShot](https://raw.github.com/kpshek/mm2pwd/master/mega-man-2-password.png)
+
 Put another way, this 5x5 grid represents 25 bits in which a password always has exactly 9 bits set. Using this representation,
 the password algorithm can be expressed succinctly in terms of these bits and using basic bitwise operations.
 
@@ -76,7 +78,7 @@ want to modify this, simply change the values in the initialize method.
 
 ## License ##
 
-Copyright 2012 Kevin Shekleton
+Copyright 2013 Kevin Shekleton
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
