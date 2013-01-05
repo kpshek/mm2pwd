@@ -82,15 +82,15 @@ describe Mm2Pwd do
   end
 
   context '#rotate_left' do
-    it 'correctly does not rotation if the shift is 0' do
+    it 'correctly does not rotate if the shift is 0' do
       expect(m.send(:rotate_left, 0b10000_00000_00000_00000, 0)).to eq(0b10000_00000_00000_00000)
     end
 
-    it 'correctly roates and wraps values for a shift of 1' do
+    it 'correctly rotates and wraps values for a shift of 1' do
       expect(m.send(:rotate_left, 0b10100_00000_00000_00000, 1)).to eq(0b01000_00000_00000_00001)
     end
 
-    it 'correctly roates and wraps values for a shift of 2' do
+    it 'correctly rotates and wraps values for a shift of 2' do
       expect(m.send(:rotate_left, 0b10100_00000_00000_00000, 2)).to eq(0b10000_00000_00000_00010)
     end
   end
