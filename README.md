@@ -3,7 +3,7 @@
 ## Overview ##
 
 [Mega Man 2](http://en.wikipedia.org/wiki/Mega_Man_2), like many games of its era, utilized a password system in order to
-continue your progress between game sessions. This removed the need for a battery in the game catridge and allowed gamers
+continue your progress between game sessions. This removed the need for a battery in the game cartridge and allowed gamers
 to share passwords (and thus progress) with others.
 
 In Mega Man 2, the password is represented as a 5x5 grid in which the columns are labled 1-5 and the rows A-E. Each password
