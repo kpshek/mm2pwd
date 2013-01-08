@@ -6,8 +6,8 @@
 continue your progress between game sessions. This removed the need for a battery in the game cartridge and allowed gamers
 to share passwords (and thus progress) with others.
 
-In Mega Man 2, the password is represented as a 5x5 grid in which the columns are labled 1-5 and the rows A-E. Each password
-is composed of 9 cells which are 'set', indicated by a red dot.
+In Mega Man 2, the password is represented as a 5x5 grid in which the columns are labeled 1-5 and the rows A-E. Each password
+is composed of 9 cells that are 'set', indicated by a red dot.
 
 Thus, a password can be communicated as A5, B2, B4, C1, C3, C5, D4, D5, E2.
 
@@ -18,7 +18,7 @@ the password algorithm can be expressed succinctly in terms of these bits and us
 [bitwise operations](http://en.wikipedia.org/wiki/Bitwise_operation).
 
 In the 25 bits, there are 5 words of 5 bits each where each word represents a row in the grid. The entire 25-bit password
-is thus comprised of the words A E D C B (using little endian). So, the first word (lowest 5 bits) are the 5 bits of the row B
+is thus comprised of the words A E D C B (using little endian). So, the first word (lowest 5 bits) is the 5 bits of the row B
 and the last word (bits 20-25) are the 5 bits of row A.
 
 ### Words 1-4 (bits 1-20) ###
@@ -55,7 +55,7 @@ forth. Unlike the other words, the 5th word (row A) will thus only ever have a s
 The E-Tank word (row A) is important in that it encodes bits 1-20 by performing a
 [rotate left operation](http://en.wikipedia.org/wiki/Circular_shift) on bits 1-20 by the number of E-Tanks that Mega Man has.
 Thus, if Mega Man has 2 E-Tanks, bits 1-20 are rotated left by 2 positions. If Mega Man has 0 E-Tanks, this is effectively a no-op.
-The table above illustrating the bits set for each of the 8 bosses represent the bits prior to the rotate left operation. The bits
+The table above illustrating the bits set for each of the 8 bosses represents the bits prior to the rotate left operation. The bits
 of the E-Tank word are not included in the left rotation.
 
 ## Algorithm ##
@@ -77,7 +77,7 @@ To run mm2pwd, simply open a terminal session in the root directory and execute 
 
     $ ./mm2pwd.rb
 
-Without an modification, this will generate a password in which Mega Man has all 4 E-Tanks and has defeated all 8 bosses. If you
+Without any modification, this will generate a password in which Mega Man has all 4 E-Tanks and has defeated all 8 bosses. If you
 want to modify this, simply change the values in the initialize method.
 
 ## License ##
